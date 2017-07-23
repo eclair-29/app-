@@ -1,0 +1,65 @@
+/* =================================================
+
+ * Main Sass Stylesheet - at styles.sass
+ * git repo: https://github.com/eclair-29/app 
+ 
+ * =================================================
+ 
+ * developer: Miguel A. de Chavez (dmgzky@gmail.com)
+ * file version: 1.0.0 -- © 2017 Skuld Project, LLC
+ 
+ * ================================================= 
+
+ * file specs: 
+ * sass architecture: Smacss by Jonathan Snook
+ * file structure includes: 
+ * layout files,
+ * modules/components files,
+ * core (base, variables) and theme files
+
+ * =================================================
+ 
+ * system build file: gulpfile.js v.1.0.0
+ * tasks name: 'styles' tasks
+ 
+ * ================================================= */
+
+
+
+
+
+
+
+// ==========================
+// Core Files
+// ==========================
+
+// development utility files
+// note: must import the following uitility files in order.
+// note: bootstrap is always on the top line imports
+@import "../utilities/bootstrap/stylesheets/bootstrap"
+@import "../utilities/bourbon/bourbon"
+@import "../utilities/bitters/base"
+
+// icon utility files
+@import "../utilities/ionicons/ionicons"
+@import "../utilities/font-awesome/font-awesome"
+
+// susy and breakpoint-sass components
+@import "../bower/susy/sass/susy"
+@import "../bower/breakpoint-sass/stylesheets/breakpoint"
+
+// core project files
+@import "core/variables"
+@import "core/base"
+
+
+// ==========================
+// Project Spcific Ui Styles
+// ==========================
+
+// compiled layouts files
+@import "layouts/layouts"
+
+// compiled modules/components
+@import "modules/modules"
