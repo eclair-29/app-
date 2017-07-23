@@ -37,23 +37,31 @@
 // File Configurations
 // ==========================
 
-var fileConfig = {
+var fileConfig = { jsConcatFiles: [
 
-	jsConcatFiles: [
-	/* bower dependency files: 
+	/* =============================================== 
+
+	 * bower dependency files: 
 	 * note: must include bower jquery first! 
-	 * components version: 
+	 * component versions: 
 	 * jquery v.3.2.1
-	 * angular v.1.6.5
+	 * angular.js v.1.6.5
+	 * backbone.js v..3.3 (wishlist)
+
 	 * =============================================== */
+
 		'src/bower/jquery/dist/jquery.js',
 		'src/bower/angular/angular.js',
 
-	/* bootstrap javascript file: 
+	/* =============================================== 
+
+	 * bootstrap javascript file: 
 	 * require this file to use bootstrap js components
-	 * components version: 
+	 * component version: 
 	 * bootstrap-sass v.3.3.7
+
 	 * =============================================== */
+
 		'src/utilities/bootstrap/javascripts/bootstrap.js',
 
 	// main javascript files (project specsfic): 

@@ -54,10 +54,10 @@ ehthumbs.db
 # Build Systems #
 #################
 node_modules/
-bower/
-bower_components/
 *.css-map
 .sass-cache/
 public/
 dist/
 build/
+bower/
+bower_components/
