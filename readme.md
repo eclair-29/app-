@@ -7,10 +7,10 @@ according to the process folder (either development or production) in order to
 handle your project smoothly.
 
 **More Information**
-- Documentation: [The Skuld Builder](https://www.facebook.com/miguel.dechavez.3) 
-- Skuld Project [Skuld Project](https://www.facebook.com/miguel.dechavez.3) 
-- Facebook: [Miguel de Chavez - Facebook Page](https://www.facebook.com/miguel.dechavez.3) 
-- Google+: [Miguel de Chavez - Google+](https://www.facebook.com/miguel.dechavez.3)
+	- Documentation: [The Skuld Builder](https://www.facebook.com/miguel.dechavez.3) 
+	- Skuld Project [Skuld Project](https://www.facebook.com/miguel.dechavez.3) 
+	- Facebook: [Miguel de Chavez - Facebook Page](https://www.facebook.com/miguel.dechavez.3) 
+	- Google+: [Miguel de Chavez - Google+](https://www.facebook.com/miguel.dechavez.3)
 
 
 
