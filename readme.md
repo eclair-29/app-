@@ -1,4 +1,4 @@
-# **The Skuld Builder v.1.0.0**
+### The Skuld Builder v.1.0.0
 
 An intermediate and transitional project workflow environment made by the [Skuld Project](www.facebook.com/miguel.dechavez.3)
 for starting your development project. The folder structure consists of a build system, 
