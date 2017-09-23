@@ -32,8 +32,10 @@ Install node packages via typing in the terminal or command line `npm install` o
    * Breakpoint Sass
    * Saasy Maps
 
+Install bower components via typing in the terminal or command line `bower install` on your project folder.
+**Note:** you can bypass npm and bower installation process seperately and install it in one go by 
+typing in `npm install && bower install`
 
-Install bower components via typing in the terminal or command line `npm install` on your project folder.
 
 
 **More Information:** Documentation: [The Skuld Builder](https://www.facebook.com/miguel.dechavez.3) 
