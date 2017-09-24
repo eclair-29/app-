@@ -11,9 +11,7 @@ Get the Skuld Builder by cloning in the [Github Repo](https://github.com/eclair-
 or simply download it via zip folder.
 
 **Build Structure:**
-1. Node Packages
-   * Semantic UI (dependency component)
-   * Node Components for Gulp (dev dependencies)
+1. Node Packages for Gulp
      * Gulp Concat
      * Gulp Uglify
      * Gulp Sass
@@ -25,15 +23,15 @@ or simply download it via zip folder.
 Install node packages via typing in the terminal or command line `npm install` on your project folder.
 
 2. Bower Components
-   * Angular.js v.1.6.5
-   * jQuery v.3.2.1
-   * Breakpoint Sass
-   * Saasy Maps
+     * Angular.js v.1.6.5
+     * jQuery v.3.2.1
+     * Breakpoint Sass
+     * Saasy Maps
 
 Install bower components via typing in the terminal or command line `bower install` on your project folder.
 
 **Note:** you can bypass npm and bower installation process seperately and install it in one go by 
-typing in `npm install && bower install`
+typing in `npm install && bower install`.
 
 
 ### Content Files
@@ -43,7 +41,7 @@ and production. the following folders and file contents are including in this pr
 
 
 
-**More Information:** Documentation: [The Skuld Builder](https://www.facebook.com/miguel.dechavez.3) 
+**More Information:** Documentation: [The Skuld Builder](https://www.facebook.com/miguel.dechavez.3).
 
 
 
