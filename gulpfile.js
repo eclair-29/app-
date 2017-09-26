@@ -19,6 +19,7 @@
  * images (metadata)
  * browser relaoding
  * error log 
+ * semantic ui builder
 
  * =================================================
 
@@ -149,7 +150,7 @@ gulp.task('styles', function(){
 
 
 // ==========================
-// HTML Markup Tasks
+// HTML Markup Task
 // ==========================
 
 gulp.task('html', function(){
@@ -159,9 +160,10 @@ gulp.task('html', function(){
 
 
 // ==========================
-// Image Minification Tasks
+// Image Minification Task
 // ==========================
 
+// minify images to enhance request loading
 gulp.task('image:min', function(){
 	return gulp.src('build/images/*')
 	.pipe(imagemin());
@@ -169,9 +171,10 @@ gulp.task('image:min', function(){
 
 
 // ==========================
-// Browser Sync Tasks
+// Browser Sync Task
 // ==========================
 
+// live reload changes
 gulp.task('browser-sync', function(){
 	browsersync({
 		server: {baseDir: "./build/"}
@@ -180,9 +183,21 @@ gulp.task('browser-sync', function(){
 
 
 // ==========================
-// Watch Tasks
+// Semantic Dist Copy Task
 // ==========================
 
+// copy the dist folder from the bower/semantic source to the build folder
+gulp.task('semantic-build',function(){
+	return gulp.src('src/bower/semantic/dist/**/*')
+	.pipe(gulp.dest('build/semantic'));
+});
+
+
+// ==========================
+// Watch Task
+// ==========================
+
+// watch all tasks for js, sass, and html files for changes 
 gulp.task('watch', function(){
 	gulp.watch('src/js/**/*.js', ['scripts']);
 	gulp.watch('src/sass/**/*.+(sass|scss)', ['styles']);
@@ -194,4 +209,5 @@ gulp.task('watch', function(){
 // Default Tasks
 // ==========================
 
-gulp.task('default', ['scripts', 'styles', 'html', 'browser-sync', 'image:min', 'watch']);
+gulp.task('default', ['scripts', 'styles', 'html', 'browser-sync', 'image:min', 'semantic-build', 'watch']);
+
