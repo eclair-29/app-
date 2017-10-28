@@ -1,14 +1,14 @@
-/* =================================================
+/* ================================================================
 
  * Gulp System Builder File - at gulpfile.js
  * git repo: https://github.com/eclair-29/app 
 
- * =================================================
+ * ================================================================
 
  * developer: Miguel A. de Chavez (dmgzky@gmail.com)
  * file version: 1.0.0 -- © 2017 Skuld Project, LLC
 
- * ================================================= 
+ * ================================================================ 
  
  * file specs: 
  * desc: tasks management for preprocessing files
@@ -21,12 +21,38 @@
  * error log 
  * semantic ui builder
 
- * =================================================
+ * ================================================================
 
  * system build file: gulpfile.js v.1.0.0
  * tasks name: 'default' tasks
 
- * ================================================= */
+ * ================================================================
+
+ * Building Procedures (MUST READ THIS): 
+
+ * 1st step:
+ * run 'gulp semantic-build' or 'gulp semantic'
+ * Note: the 'gulp semantic' comes w/ 'watch' task for semantic, so
+ * we recommend to use the command 'gulp semantic-build' to only
+ * fetch distribution files.
+
+ * 2nd step: 
+ * after building the dist/ folder from semantic source,
+ * run 'gulp semantic-dist' to distribute the dist/ folder from
+ * semantic source folder to the project build folder.
+
+ * 3rd step: 
+ * run 'gulp semantic-clean' to remove the dist/ folder from the 
+ * semantic source folder (to minimize overall file size).
+
+ * 4th step: 
+ * finally, run 'gulp' to fetch all tasks (scripts, styles, markups)
+ * and watch them all for changes.
+
+ * 5th step: 
+ * press and hold 'ctrl + c' to terminate session.
+
+ * ================================================================ */
 
 
 
@@ -35,7 +61,7 @@
 
 
 // ==========================
-// File Configurations
+//    File Configurations
 // ==========================
 
 var fileConfig = { jsConcatFiles: [
@@ -72,9 +98,8 @@ var fileConfig = { jsConcatFiles: [
 
 
 // ==========================
-// Requires
+//         Requires
 // ==========================
-
 
 /* =============================================== 
 
@@ -101,10 +126,14 @@ var imagemin	 	= require('gulp-imagemin');
 var autoprefixer 	= require('gulp-autoprefixer');	
 var browsersync	 	= require('browser-sync');
 var reload	 	 	= browsersync.reload;
+// semantic build imports
+var watch  			= require('./semantic/tasks/watch');
+var build  			= require('./semantic/tasks/build');
+var clean  			= require('./semantic/tasks/clean');
 
 
 // ==========================
-// Error Log 
+//        Error Log 
 // ==========================
 
 function errorlog(err) {
@@ -114,7 +143,35 @@ function errorlog(err) {
 
 
 // ==========================
-// Scripts Tasks (=> app.js)
+//    Semantic Build Tasks
+// ==========================
+
+// watch semantic source for changes
+gulp.task('semantic-watch', watch);
+
+// build source files for changes
+gulp.task('semantic-build', build);
+
+// semantic default tasks
+gulp.task('semantic', ['semantic-watch', 'semantic-build']);
+
+
+// ==========================
+// 	  Semantic Dist Tasks
+// ==========================
+
+// copy the dist folder from the semantic source to the build folder
+gulp.task('semantic-dist',function(){
+	return gulp.src('semantic/dist/**/*')
+	.pipe(gulp.dest('build/semantic'));
+});
+
+// clean /dist folder from semantic
+gulp.task('semantic-clean', clean);
+
+
+// ==========================
+//       Scripts Task
 // ==========================
 
 gulp.task('scripts', function(){
@@ -132,7 +189,7 @@ gulp.task('scripts', function(){
 
 
 // ==========================
-// Styles Tasks (sass to css)
+//        Styles Task
 // ==========================
 
 gulp.task('styles', function(){
@@ -144,13 +201,13 @@ gulp.task('styles', function(){
 		.pipe(autoprefixer({browsers: ['last 3 versions'], cascade: false}))
 		.pipe(sourcemaps.write('../css/maps'))
 		.pipe(gulp.dest('build/css'))
-		
+	
 		.pipe(reload({stream: true}));
 });
 
 
 // ==========================
-// HTML Markup Task
+//      HTML Markup Task
 // ==========================
 
 gulp.task('html', function(){
@@ -160,7 +217,7 @@ gulp.task('html', function(){
 
 
 // ==========================
-// Image Minification Task
+//  Image Minification Task
 // ==========================
 
 // minify images to enhance request loading
@@ -171,7 +228,7 @@ gulp.task('image:min', function(){
 
 
 // ==========================
-// Browser Sync Task
+//     Browser Sync Task
 // ==========================
 
 // live reload changes
@@ -183,18 +240,7 @@ gulp.task('browser-sync', function(){
 
 
 // ==========================
-// Semantic Dist Copy Task
-// ==========================
-
-// copy the dist folder from the bower/semantic source to the build folder
-gulp.task('semantic-build',function(){
-	return gulp.src('src/bower/semantic/dist/**/*')
-	.pipe(gulp.dest('build/semantic'));
-});
-
-
-// ==========================
-// Watch Task
+//        Watch Task
 // ==========================
 
 // watch all tasks for js, sass, and html files for changes 
@@ -206,8 +252,7 @@ gulp.task('watch', function(){
 
 
 // ==========================
-// Default Tasks
+//       Default Tasks
 // ==========================
 
-gulp.task('default', ['scripts', 'styles', 'html', 'browser-sync', 'image:min', 'semantic-build', 'watch']);
-
+gulp.task('default', ['scripts', 'styles', 'html', 'browser-sync', 'image:min', 'watch']);
