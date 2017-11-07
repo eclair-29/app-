@@ -49,7 +49,11 @@
  * finally, run 'gulp' to fetch all tasks (scripts, styles, markups)
  * and watch them all for changes.
 
- * 5th step: 
+ * 5th step: (optional if not using semantic or use both)
+ * run gulp bs-dist to distribute the compiled css and js files from 
+ * node_modules to the build folder
+
+ * 6th step: 
  * press and hold 'ctrl + c' to terminate session.
 
  * ================================================================ */
@@ -163,11 +167,22 @@ gulp.task('semantic', ['semantic-watch', 'semantic-build']);
 // copy the dist folder from the semantic source to the build folder
 gulp.task('semantic-dist',function(){
 	return gulp.src('semantic/dist/**/*')
-	.pipe(gulp.dest('build/semantic'));
+	.pipe(gulp.dest('build/lib/semantic'));
 });
 
 // clean /dist folder from semantic
 gulp.task('semantic-clean', clean);
+
+
+// ==========================
+// 	  Bootstrap Dist Tasks
+// ==========================
+
+// copy the dist folder from the node_modules/bootstrap source to the build folder
+gulp.task('bs-dist',function(){
+	return gulp.src('node_modules/bootstrap/dist/**/*')
+	.pipe(gulp.dest('build/lib/bootstrap'));
+});
 
 
 // ==========================

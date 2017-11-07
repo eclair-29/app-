@@ -66,6 +66,3 @@ bower_components/
 # Frameworks and API's #
 ########################
 semantic/
-semantic/output/
-semantic/dist/
-build/semantic-dist/
