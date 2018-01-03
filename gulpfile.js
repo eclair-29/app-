@@ -50,7 +50,7 @@
  * and watch them all for changes.
 
  * 5th step: (optional if not using semantic or use both)
- * run gulp bs-dist to distribute the compiled css and js files from 
+ * run 'gulp bs-dist' to distribute the compiled css and js files from 
  * node_modules to the build folder
 
  * 6th step: 
