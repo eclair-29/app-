@@ -56,16 +56,9 @@ ehthumbs.db
 node_modules/
 *.css-map
 .sass-cache/
-dist/
-public/
-#build/
-bower/
-bower_components/
 
 
 # Frameworks and API's #
 ########################
 semantic/
-semantic/output/
-semantic/dist/
-build/semantic-dist/
+vendors/
